@@ -24,14 +24,14 @@ class SisowComponent extends Component {
 	public $merchantKey;
 
 	// Transaction data
-	public $payment;	// empty=iDEAL; sofort=DIRECTebanking; mistercash=MisterCash; ...
-	public $issuerId;	// mandatory; sisow bank code
-	public $purchaseId;	// mandatory; max 16 alphanumeric
+	public $payment;		// empty=iDEAL; creditcard=CreditCard; sofort=DIRECTebanking; mistercash=MisterCash; ...
+	public $issuerId;		// mandatory; sisow bank code
+	public $purchaseId;		// mandatory; max 16 alphanumeric
 	public $entranceCode;	// max 40 strict alphanumeric (letters and numbers only)
 	public $description;	// mandatory; max 32 alphanumeric
-	public $amount;		// mandatory; min 0.45
+	public $amount;			// mandatory; min 0.45
 	public $notifyUrl;
-	public $returnUrl;	// mandatory
+	public $returnUrl;		// mandatory
 	public $cancelUrl;
 	public $callbackUrl;
 
