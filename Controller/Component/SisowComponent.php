@@ -23,6 +23,8 @@ class SisowComponent extends Component {
 	public $merchantId;
 	public $merchantKey;
 
+	public $testMode = false;
+
 	// Transaction data
 	public $payment;		// empty=iDEAL; creditcard=CreditCard; sofort=DIRECTebanking; mistercash=MisterCash; ...
 	public $issuerId;		// mandatory; sisow bank code
@@ -87,6 +89,10 @@ class SisowComponent extends Component {
 
 		$this->merchantId  = $merchantinfo['merchantId'];
 		$this->merchantKey = $merchantinfo['merchantKey'];
+
+		if( isset($merchantinfo['testMode']) ) {
+			$this->testMode = (bool) $merchantinfo['testMode'];
+		}
 	}
 
 	private function error() {
